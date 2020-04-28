@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { DatasComponent } from './datas/datas.component';
+import { EnderecoComponent } from './endereco/endereco.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventosComponent,
-    DatasComponent
+    DatasComponent,
+    EnderecoComponent
   ],
   imports: [
     BrowserModule,
