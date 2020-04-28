@@ -1,0 +1,23 @@
+<div>
+  <h1>Parabéns!</h1>
+  <h4>Seu componente está sendo exibido em tela</h4>
+  <hr>
+  <h5>Como aparece o seu evento abaixo?</h5>
+  <div *ngFor="let evento of eventos">
+    <div>
+      Nome: {{ evento.name }}
+    </div>
+    <div>
+      Data: {{ evento.date }}
+    </div>
+    <div>
+      Hora: {{ evento.time }}
+    </div>
+    <div *ngIf="evento.location && !evento.onlineUrl ">
+      Endereço: {{ evento.location.address }}, {{ evento.location.city }}, {{ evento.location.country }}
+    </div>
+    <div *ngIf="evento.onlineUrl">
+      Evento Online no {{ evento.onlineUrl }}
+    </div>
+  </div>
+</div>
