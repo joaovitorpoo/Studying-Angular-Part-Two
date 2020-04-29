@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-eventos',
@@ -15,9 +16,19 @@ export class EventosComponent implements OnInit {
     {name:'Samba Prime', date: '6/10/2020', time: '8am', location: {address: 'Expominas', city: 'Belo Horizonte', country: 'Brasil'}, onlineUrl: 'http://www.sambaprime.com.br'}
   ]
 
+  receberEnderecoAtualizado(event: EventEmitter){
+    this.eventos.forEach(evento => {
+      if (evento.name == event['name']){
+        evento.name = event['name'];
+        evento.location = event['location'];
+      }
+    })
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

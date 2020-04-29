@@ -14,7 +14,7 @@
       Hora: {{ evento.time }}
     </div>
     <div *ngIf="evento.location && !evento.onlineUrl ">
-      Endereço: <app-endereco [localizacao]= evento.location></app-endereco>
+      Endereço: <app-endereco [localizacao]= evento.location (atualizarEndereco)="receberEnderecoAtualizado($event)"></app-endereco>
     </div>
     <div *ngIf="evento.onlineUrl">
       Evento Online no {{ evento.onlineUrl }}
